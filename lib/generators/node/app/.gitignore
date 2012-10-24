@@ -1,6 +1,2 @@
-temp
-dist
-.sass-cache
-app/styles/css/*
+lib-cov
 node_modules
-*.tar.gz

@@ -1,0 +1,6 @@
+temp
+dist
+.sass-cache
+app/styles/css/*
+node_modules
+*.tar.gz

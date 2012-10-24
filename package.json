@@ -1,0 +1,16 @@
+{
+  "name": "yeoman-custom-generators",
+  "main": "./lib/generators",
+  "author": {
+    "name": "Oskar Schöldström",
+    "email": "public@oxy.fi"
+  },
+  "version": "0.0.1",
+  "dependencies": {
+    "grunt": "https://nodeload.github.com/cowboy/grunt/tarball/0ba6d4b529",
+    "yeoman": "*"
+  },
+  "engines": {
+    "node": "*"
+  }
+}

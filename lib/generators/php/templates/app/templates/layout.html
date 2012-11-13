@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+  {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{% block title %}{{ site.title }}{% endblock %}</title>
+    {% block metatags %}
+      {% block ogdata %}
+        <meta property="og:image" content="{{ page.image }}">
+        <meta property="og:description" content="{{ page.description }}">
+        <meta property="og:site_name" content="{{ site.title }}">
+        <meta property="og:url" content="{{ page.url }}">
+      {% endblock %}
+      <meta name="description" content="{{ page.description }}">
+      <meta name="viewport" content="width=device-width">
+    {% endblock %}
+    <!-- build:css assets/styles.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  {% endblock %}
+  </head>
+  <body>
+  {% block content %}
+  {% endblock %}
+  {% block script %}
+    <script>
+      window.app = {
+          base_url : '{{ site.base_url }}'<% if (fbsdk) { %>
+        , app_id : '{{ fb.app_id }}'
+        , is_liked : {% if fb.is_liked %}true{% else %}false{% endif %}
+        , is_facebook : {% if fb.is_facebook %}true{% else %}false{% endif %}
+      <% } %>};
+    </script>
+    <!-- build:js assets/script.js -->
+    <% if (backbone) { %><script data-main="scripts/main" src="scripts/libs/require.js"></script><% } %>
+    <!-- endbuild -->
+    <script>
+      var _gaq = [['_setAccount', '{{ site.ga }}'], ['_trackPageview']];
+      (function(d,e){
+        var u = [
+            ('https:' === location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js', // Google Analytics
+            '//connect.facebook.net/en_US/all.js#xfbml=1' // Facebook JS SDK
+          ],
+          i = u.length,
+          f = d.createDocumentFragment(),
+          s = d.createElement(e),
+          z;
+
+        while (i--) {
+          z = s.cloneNode(false);
+          z.async = z.src = u[i];
+          f.appendChild(z);
+        }
+        (z = d.getElementsByTagName(e)[0]).parentNode.insertBefore(f, z);
+      }(document,'script'));
+    </script>
+    <!--[if lt IE 8]><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script><script>CFInstall.check({mode: "overlay"});</script><![endif]-->
+  {% endblock %}
+  </body>
+</html>

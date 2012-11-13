@@ -1,0 +1,15 @@
+{
+  "name": "<%= grunt.util._.classify(name) %>",
+  "description": "<%= description %>",
+  "version": "0.0.1",
+  "authors": [{
+    "name": "<%= author %>"
+  }],
+  "require": <%= require %>,
+  "config": {
+    "vendor-dir" : "app/vendor"
+  },
+<% if (bin) { %>
+  "bin": ["bin/server"]
+<% } %>
+}

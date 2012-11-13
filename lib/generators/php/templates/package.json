@@ -1,0 +1,18 @@
+{
+  "name": "<%= grunt.util._.classify(name) %>",
+  "description": "<%= description %>",
+  "version": "0.0.1",
+  "author": {
+    "name": "<%= author %>"
+  },
+  "scripts": { "test" : "make test-all" },
+  <% if (bin) { %>"bin": { "server" : "./bin/server" },<% } %>
+  "devDependencies": {
+    "docco": "*",
+    "marked": "*",
+    "mocha": "*",
+    "should": "*",
+    "grunt-rm": "*",
+    "grunt-shell": "*"
+  }
+}

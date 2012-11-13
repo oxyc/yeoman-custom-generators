@@ -1,0 +1,27 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:image" content="{{ image }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:url" content="{{ url }}">
+  <meta property="fb:admins" content="{{ fb.admins }}">
+  <meta property="fb:app_id" content="{{ fb.app_id }}">
+</head>
+<body>
+  <script>
+    {% if debug %}
+      // window.location = '{{ redirect_url }}';
+    {% else %}
+      window.location = '{{ redirect_url }}';
+    {% endif %}
+  </script>
+  <h1><a href="{{ redirect_url }}">Redirecting...</a></h1>
+</body>
+</html>

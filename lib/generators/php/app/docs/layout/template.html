@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Documentation</title>
+    <link rel="stylesheet" href="layout/styles.css" />
+    <link rel="stylesheet" href="layout/prism.css" />
+  </head>
+  <body>
+    <h1>Documentation</h1>
+    <h2><%= heading %></h2>
+    <ul>
+      <% _.each(files, function(path, name) { %><li>
+        <a href="<%= path %>"><%= name %></a>
+      </li><% }); %>
+    </ul>
+    <script>
+      Array.prototype.slice
+        .call(document.getElementsByClassName('lang-js'))
+        .forEach(function (el) { el.className = 'lang-javascript'; });
+    </script>
+    <script src="layout/prism.js"></script>
+  </body>
+</html>
+

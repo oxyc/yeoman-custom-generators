@@ -5,11 +5,12 @@
   , "authors": [{
     "name": "<%= author %>"
   }]
+  , "autoload": {
+    "classmap": ["app/src"]
+  }
   , "require": <%= require %>
   , "config": {
     "vendor-dir" : "app/vendor"
-  }
-<% if (bin) { %>
-  , "bin": ["bin/server"]
-<% } %>
+  }<% if (bin) { %>
+  , "bin": ["bin/server"]<% } %>
 }

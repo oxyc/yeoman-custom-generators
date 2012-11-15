@@ -12,6 +12,8 @@
     "grunt-rm": "*",
     "grunt-doccoh": "*",
     "grunt-docs-landing": "git://github.com/oxyc/grunt-docs-landing.git",
-    "grunt-shell": "*"
+    "grunt-shell": "*",
+    "grunt-contrib-connect": "*",
+    "gateway": "*"
   }
 }

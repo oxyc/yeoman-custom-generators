@@ -3,8 +3,8 @@
 define('DEBUG', TRUE);
 
 return array(
-  'templates.path' => 'templates',
-  'twig.cache' => __DIR__ . '/cache',
+  'templates.path' => 'templates',<% if (twig) { %>
+  'twig.cache' => __DIR__ . '/cache',<% } %>
   'debug' => DEBUG,
   'site' => array(
     'title' => 'title',

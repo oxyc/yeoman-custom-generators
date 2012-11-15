@@ -13,8 +13,13 @@ $app = new \Slim\Slim(array(
   'mode' => DEBUG ? 'development' : 'production',
 <% if (twig) { %>  'view' => $twigView,<% } %>
 ));
-$app->config($config);
-<% if (fbsdk) { %>
+$app->config($config);<% } %>
+<% if (twig && !slim) { %>
+$loader = new Twig_Loader_Filesystem(TWIG_TEMPLATES);
+$twig = new Twig_Environment($loader, array(
+  'cache' => DEBUG ? FALSE : $config['twig.cache'],
+));
+<% } %><% if (fbsdk) { %>
 $fb = new Facebook(array(
   'appId' => $config['fb']['app_id'],
   'secret' => $config['fb']['secret'],
@@ -28,7 +33,7 @@ $app->config('fb.session', array(
   'country' => $req['user']['country'],
   'locale' => $req['user']['locale'],
 ));
-<% } %>
+<% } %><% if (slim) { %>
 $app->get('/', function() use ($app) {
   $vars['fb'] = $app->config('fb');
   $vars['site'] = $app->config('site');

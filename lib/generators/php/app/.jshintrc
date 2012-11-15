@@ -18,5 +18,6 @@
   "laxcomma": true,
   "laxbreak": true,
   "es5": true,
-  "node": true
+  "node": true,
+  "predef": ["describe", "before", "after", "it", "beforeEach", "afterEach", "expect", "define"]
 }

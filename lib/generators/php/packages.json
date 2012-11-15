@@ -1,0 +1,23 @@
+{
+    "slim": {
+      "name": "slim/slim"
+    , "version": "2.*"
+  }
+  , "slimextras": {
+      "name": "slim/extras"
+    , "version": "dev-master"
+    , "children": ["slim", "twig"]
+  }
+  , "twig": {
+      "name": "twig/twig"
+    , "version": "1.*"
+  }
+  , "phpunit": {
+      "name": "phpunit/phpunit"
+    , "version": "3.7.*"
+  }
+  , "fbsdk": {
+      "name": "facebook/php-sdk"
+    , "version": "dev-master"
+  }
+}

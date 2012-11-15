@@ -8,12 +8,14 @@
   </head>
   <body>
     <h1>Documentation</h1>
-    <h2><%= heading %></h2>
+    <% _.forEach(sections, function(section) { %>
+    <h2><%= section.heading %></h2>
     <ul>
-      <% _.each(files, function(path, name) { %><li>
-        <a href="<%= path %>"><%= name %></a>
+      <% _.forEach(section.files, function(file) { %><li>
+        <a href="<%= file.path %>"><%= file.name %></a>
       </li><% }); %>
     </ul>
+  <% }); %>
     <script>
       Array.prototype.slice
         .call(document.getElementsByClassName('lang-js'))
@@ -22,4 +24,3 @@
     <script src="layout/prism.js"></script>
   </body>
 </html>
-

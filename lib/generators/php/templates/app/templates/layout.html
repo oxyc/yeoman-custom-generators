@@ -18,25 +18,32 @@
       <meta name="description" content="{{ page.description }}">
       <meta name="viewport" content="width=device-width">
     {% endblock %}
-    <!-- build:css assets/styles.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    {#
+      One must set up the css task to correspond with this file setup.
+    #}
+    <!-- build:css /assets/styles.css --><% if (sassBootstrap) { %>
+    <link rel="stylesheet" href="/assets/bootstrap.css" />
+    <link rel="stylesheet" href="/assets/responsive.css" /><% } %>
+    <link rel="stylesheet" href="/assets/main.css" />
     <!-- endbuild -->
   {% endblock %}
   </head>
   <body>
-  {% block content %}
-  {% endblock %}
+    <div id="main">
+    {% block content %}
+    {% endblock %}
+    </div>
   {% block script %}
     <script>
       window.app = {
-          base_url : '{{ site.base_url }}'<% if (fbsdk) { %>
-        , app_id : '{{ fb.app_id }}'
-        , is_liked : {% if fb.is_liked %}true{% else %}false{% endif %}
-        , is_facebook : {% if fb.is_facebook %}true{% else %}false{% endif %}
+        base_url : '{{ site.base_url }}'<% if (fbsdk) { %>,
+        app_id : '{{ fb.app_id }}',
+        is_liked : {% if fb.is_liked %}true{% else %}false{% endif %},
+        is_facebook : {% if fb.is_facebook %}true{% else %}false{% endif %}
       <% } %>};
     </script>
-    <!-- build:js assets/script.js -->
-    <% if (backbone) { %><script data-main="scripts/main" src="scripts/libs/require.js"></script><% } %>
+    <!-- build:js /assets/script.js -->
+    <% if (backbone) { %><script data-main="/scripts/config" src="/scripts/libs/require.js"></script><% } %>
     <!-- endbuild -->
     <script>
       var _gaq = [['_setAccount', '{{ site.ga }}'], ['_trackPageview']];

@@ -17,5 +17,5 @@
   "eqnull": true,
   "laxcomma": true,
   "browser": true,
-  "predef": [ "define", "Backbone", "require", "jQuery", "$", "window", "_" ]
+  "predef": [ "define", "require", "window", "console" ]
 }

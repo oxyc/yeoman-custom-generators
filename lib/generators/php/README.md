@@ -1,10 +1,37 @@
-# <%= name %>
+# yeoman init php
 
-*by <%= author %>*
+*by Oskar Schöldström*
 
-<%= description %>
+A yeoman generator for php projects. Currently it isn't very flexible but more
+shaped to my personal needs.
 
-## Repository
+## Getting started
+
+1. `mkdir myapp && cd myapp`
+2. `npm install git://github.com/oxyc/yeoman-custom-generators.git`
+3. `yeoman init php`
+4. Choose your configuration
+5. `yeoman build`
+
+## Features
+
+* Require.js client structure
+* Usemin handler enabled
+* Revisioning of filenames
+* Compass
+* Twitter Bootstap (optional)
+* Composer
+* Slim, micro PHP framework (optionl)
+* Twig (optional)
+* Slim-Extras (installed when both slim and twig are chosen)
+* Mocha test setup using phantom.js or through your own browser.
+* Lint configurations
+* Image optimization
+* CSS/JS minification
+* Doccoh documentation generation
+* PHP server built in (not really working properly)
+
+## Project features
 
 ### Usage
 
@@ -58,8 +85,18 @@
 ### Dependencies
 
 * [Yeoman](http://yeoman.io) (Building)
-<% if (mit) { %>
+
+## Todo
+
+* Test suit
+* Clean up code
+* Try to split the generator into multiple
+* Add PHPUnit
+* Add jscoverage, mocha test documentation
+* Read up on grunt.log and do it properly
+* LiveReload
+* Symlink jshintrcs
 
 ## License
 
-MIT<% } %>
+MIT

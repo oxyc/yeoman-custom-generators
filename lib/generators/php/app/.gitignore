@@ -1,2 +1,16 @@
+# Project related
 lib-cov
 node_modules
+cache
+
+# Trash not to e tracked
+Thumbs.db
+.AppleDouble
+.DS_Store
+Desktop.ini
+._*
+*.sublime-projectcompletions
+
+# SASS
+.sass-cache
+*.scsssc

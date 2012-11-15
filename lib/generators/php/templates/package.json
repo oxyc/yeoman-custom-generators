@@ -5,14 +5,14 @@
   "author": {
     "name": "<%= author %>"
   },
-  "scripts": { "test" : "make test-all" },
+  "scripts": { "test" : "yeoman test" },
   <% if (bin) { %>"bin": { "server" : "./bin/server" },<% } %>
   "devDependencies": {
-    "docco": "*",
-    "marked": "*",
     "mocha": "*",
     "should": "*",
     "grunt-rm": "*",
+    "grunt-doccoh": "*",
+    "grunt-docs-landing": "git://github.com/oxyc/grunt-docs-landing.git",
     "grunt-shell": "*"
   }
 }

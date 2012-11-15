@@ -7,12 +7,6 @@
   },
   "main" : "./index",
   "scripts": { "test" : "make test-all" },
-<% if (bin) { %>
-  "bin": { "server" : "./bin/server" },
-  "dependencies": {
-    "commander": "*"
-  },
-<% } %>
   "devDependencies": {
     "docco": "*",
     "marked": "*",

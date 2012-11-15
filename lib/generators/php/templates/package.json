@@ -6,7 +6,6 @@
     "name": "<%= author %>"
   },
   "scripts": { "test" : "yeoman test" },
-  <% if (bin) { %>"bin": { "server" : "./bin/server" },<% } %>
   "devDependencies": {
     "mocha": "*",
     "should": "*",

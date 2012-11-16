@@ -5,18 +5,19 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
   {% block head %}
-    <meta charset="utf-8">
-    <title>{% block title %}{{ site.title }}{% endblock %}</title>
+    <meta charset="utf-8" />
+    <title>{% block title %}{{ page.title }}{% endblock %}</title>
     {% block metatags %}
       {% block ogdata %}
-        <meta property="og:image" content="{{ page.image }}">
-        <meta property="og:description" content="{{ page.description }}">
-        <meta property="og:site_name" content="{{ site.title }}">
-        <meta property="og:url" content="{{ page.url }}">
+        <meta property="og:title" content="{{ page.title }}" />
+        <meta property="og:description" content="{{ page.description }}" />
+        <meta property="og:image" content="{{ page.image }}" />
+        <meta property="og:url" content="{{ page.url }}" />
       {% endblock %}
-      <meta name="description" content="{{ page.description }}">
-      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="{{ page.description }}"/ >
+      <meta name="viewport" content="width=device-width" />
     {% endblock %}
+    <link rel="canonical" href="{{ page.url }}" />
     {#
       One must set up the css task to correspond with this file setup.
     #}
@@ -41,9 +42,6 @@
         is_facebook : {% if fb.is_facebook %}true{% else %}false{% endif %}
       <% } %>};
     </script>
-    <!-- build:js /assets/script.js -->
-    <% if (backbone) { %><script data-main="/scripts/config" src="/scripts/libs/require.js"></script><% } %>
-    <!-- endbuild -->
     <script>
       var _gaq = [['_setAccount', '{{ site.ga }}'], ['_trackPageview']];
       (function(d,e){
@@ -64,6 +62,9 @@
         (z = d.getElementsByTagName(e)[0]).parentNode.insertBefore(f, z);
       }(document,'script'));
     </script>
+    <!-- build:js /assets/script.js -->
+    <% if (backbone) { %><script data-main="/scripts/config" src="/scripts/libs/require.js"></script><% } %>
+    <!-- endbuild -->
     <!--[if lt IE 8]><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script><script>CFInstall.check({mode: "overlay"});</script><![endif]-->
   {% endblock %}
   </body>
